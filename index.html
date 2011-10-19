@@ -1,0 +1,41 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+    <title>HTML5 Camera Demo - Opera 12 alpha</title> 
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=yes">
+    <style type="text/css">
+      video { 
+         position:absolute;
+         left:100px;
+         top:100px;
+         text-align:center;
+         border-radius:20px;
+         box-shadow: 10px 10px 10px rgba(68,68,68,0.6);
+      }
+     h4 { text-align:center;}
+   </style>
+   <script>
+    window.onload = function() {
+      var video = document.getElementById('sourcevid');
+      if (navigator.getUserMedia) {
+          navigator.getUserMedia('video', successCallback, errorCallback);
+          function successCallback(stream) {
+              video.src = stream;
+              console.log('video stream success!');
+          }
+          function errorCallback(error) {
+              console.error('An error occurred: [CODE ' + error.code + ']');
+              return;
+          }
+      } 
+   }
+  </script>
+</head>
+<body>
+  <h4>HTML5 Camera Demo - Opera 12 alpha</a>
+  <video id="sourcevid" autoplay="true">NO SUPPORT FOR VIDEO </video>
+</body>
+</html>
+ 
+
